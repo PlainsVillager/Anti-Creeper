@@ -1,5 +1,6 @@
 package io.github.plainsvillager.anticreeper;
 
+import io.github.plainsvillager.anticreeper.mixin.ICreeperEntityFuseMixin;
 import net.fabricmc.api.ModInitializer;
 
 public class AntiCreeper implements ModInitializer {
@@ -8,5 +9,6 @@ public class AntiCreeper implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        ICreeperEntityFuseMixin.setFuseTime(100);
     }
 }

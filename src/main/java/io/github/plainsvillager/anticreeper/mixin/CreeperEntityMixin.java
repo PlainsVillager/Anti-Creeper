@@ -9,9 +9,12 @@ import org.spongepowered.asm.mixin.Overwrite;
 
 @Mixin(CreeperEntity.class)
 public abstract class CreeperEntityMixin extends LivingEntity {
+
     public CreeperEntityMixin(EntityType<? extends CreeperEntity> entityType, World world) {
         super(entityType, world);
     }
+
+
     /**
      * @author PlainsVillager
      * @reason L
