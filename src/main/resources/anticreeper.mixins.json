@@ -4,6 +4,7 @@
   "package": "io.github.plainsvillager.anticreeper.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "CreeperEntityMixin"
   ],
   "client": [
   ],

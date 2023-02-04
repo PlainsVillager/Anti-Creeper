@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "anticreeper",
-  "version": "${version}",
+  "version": "1.0",
   "name": "AntiCreeper",
   "description": "A mod that not allows creeper's explosion to break the block !",
   "authors": [
@@ -25,6 +25,6 @@
   "depends": {
     "fabricloader": ">=0.14.13",
     "fabric": "*",
-    "minecraft": "1.20-alpha.23.5.a"
+    "minecraft": "1.19.4-alpha.23.5.a"
   }
 }

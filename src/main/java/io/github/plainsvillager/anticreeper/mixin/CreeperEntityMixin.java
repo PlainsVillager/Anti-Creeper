@@ -13,8 +13,8 @@ public abstract class CreeperEntityMixin extends LivingEntity {
         super(entityType, world);
     }
     /**
-     * @author
-     * @reason
+     * @author PlainsVillager
+     * @reason L
      */
     @Overwrite
     public void explode() {
