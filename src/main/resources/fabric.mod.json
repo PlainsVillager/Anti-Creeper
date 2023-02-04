@@ -8,8 +8,8 @@
     "PlainsVillager"
   ],
   "contact": {
-    "website": "https://plainsvillager.github.io/mods/AntiCreeper",
-    "repo": "https://github.com/PlainsVillager/Anti-Creeper"
+    "website": "plainsvillager.github.io/mods/AntiCreeper",
+    "repo": "github.com/PlainsVillager/Anti-Creeper"
   },
   "license": "GPL-3.0",
   "icon": "assets/anticreeper/icon.png",
