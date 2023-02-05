@@ -1,15 +1,16 @@
 {
   "schemaVersion": 1,
   "id": "anticreeper",
-  "version": "1.0",
+  "version": "1.1",
   "name": "AntiCreeper",
   "description": "A mod that not allows creeper's explosion to break the block !",
   "authors": [
     "PlainsVillager"
   ],
   "contact": {
-    "website": "plainsvillager.github.io/mods/AntiCreeper",
-    "repo": "github.com/PlainsVillager/Anti-Creeper"
+    "homepage": "https://plainsvillager.github.io/mods/AntiCreeper",
+    "sources": "https://github.com/PlainsVillager/Anti-Creeper",
+    "issues": "https://github.com/PlainsVillager/Anti-Creeper/issues"
   },
   "license": "GPL-3.0",
   "icon": "assets/anticreeper/icon.png",
