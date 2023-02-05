@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "anticreeper",
-  "version": "1.3",
+  "version": "1.4-beta.1",
   "name": "AntiCreeper",
   "description": "A mod that not allows creeper's explosion to break the block !",
   "authors": [
