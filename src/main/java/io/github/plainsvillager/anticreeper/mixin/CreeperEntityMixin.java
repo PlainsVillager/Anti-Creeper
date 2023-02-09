@@ -53,7 +53,7 @@ public abstract class CreeperEntityMixin extends LivingEntity {
      */
     @Inject(at = @At("TAIL"), method = "<init>")
     public void injectTo(CallbackInfo ci) {
-        fuseTime = 60;
+        fuseTime = AntiCreeper.world.getGameRules().getInt(AntiCreeper.FUSE_TIME);
     }
 
 }
