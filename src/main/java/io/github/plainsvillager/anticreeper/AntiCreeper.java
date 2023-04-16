@@ -13,18 +13,13 @@ import net.minecraft.world.World;
 public class AntiCreeper implements ModInitializer {
 
     public static final String MOD_ID = "anticreeper";
-    public static World world;
 
-    public static final GameRules.Key<GameRules.BooleanRule> DO_CREEPERS_EXPLOSION_DESTROY = GameRuleRegistry.register("doCreepersExplosionDestroy", GameRules.Category.MOBS, GameRuleFactory.createBooleanRule(true));
+    public static final GameRules.Key<GameRules.BooleanRule> DO_CREEPERS_EXPLOSION_DESTROY = GameRuleRegistry.register("anticreeper_doCreepersExplosionDestroy", GameRules.Category.MOBS, GameRuleFactory.createBooleanRule(true));
 
-    public static final GameRules.Key<GameRules.IntRule> FUSE_TIME = GameRuleRegistry.register("explosion_fuse_time", GameRules.Category.MOBS, GameRuleFactory.createIntRule(30));
+    public static final GameRules.Key<GameRules.IntRule> FUSE_TIME = GameRuleRegistry.register("anticreeper_explosion_fuse_time", GameRules.Category.MOBS, GameRuleFactory.createIntRule(30));
 
     @Override
     public void onInitialize() {
-        ServerLifecycleEvents.SERVER_STARTED.register(server -> {
-            if (server.getWorld(RegistryKey.of(RegistryKeys.WORLD, new Identifier("dimension"))) != null) {
-                world = server.getWorld(RegistryKey.of(RegistryKeys.WORLD, new Identifier("dimension")));
-            }
-        });
+
     }
 }
