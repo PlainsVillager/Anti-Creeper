@@ -4,10 +4,11 @@ import io.github.plainsvillager.anticreeper.AntiCreeper;
 import net.minecraft.entity.AreaEffectCloudEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.mob.CreeperEntity;
 import net.minecraft.world.World;
-import net.minecraft.world.explosion.Explosion;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -25,42 +26,28 @@ public abstract class CreeperEntityMixin extends LivingEntity {
     @Shadow
     private int fuseTime;
 
-    private Explosion gameRule;
+    @Shadow
+    private int explosionRadius;
+
+    @Shadow @Final private static TrackedData<Boolean> CHARGED;
 
     public CreeperEntityMixin(EntityType<? extends CreeperEntity> entityType, World world) {
         super(entityType, world);
     }
 
-
-//    /**
-//     * @author PlainsVillager
-//     * @reason
-//     */
-//    @Overwrite
-//    public void explode() {
-//        if (!this.world.isClient) {
-//            this.dead = true;
-//            if (!this.world.getGameRules().getBoolean(DO_CREEPERS_EXPLOSION_DESTROY)) {
-//                this.world.createExplosion(this, this.getX(), this.getY(), this.getZ(), 6.0F, World.ExplosionSourceType.NONE);
-//            } else {
-//                this.world.createExplosion(this, this.getX(), this.getY(), this.getZ(), 6.0F, World.ExplosionSourceType.TNT); // here ain't any wrong!
-//            }
-//            this.discard();
-//        }
-//    }
-
     @Inject(method = "explode", at = @At("HEAD"), cancellable = true)
     private void explode(CallbackInfo ci) {
         ci.cancel();
         if(!this.world.isClient()) {
-            //float f = this.shouldRenderOverlay() ? 2.0F : 1.0F;
+            float f = this.dataTracker.get(CHARGED) ? 2.0F : 1.0F;
             this.dead = true;
             if (!this.world.getGameRules().getBoolean(DO_CREEPERS_EXPLOSION_DESTROY)) {
-                this.world.createExplosion(this, this.getX(), this.getY(), this.getZ(), 6.0F, World.ExplosionSourceType.NONE);
+                this.world.createExplosion(this, this.getX(), this.getY(), this.getZ(), (float)this.explosionRadius * f, World.ExplosionSourceType.NONE);
             } else {
-                this.world.createExplosion(this, this.getX(), this.getY(), this.getZ(), 6.0F, World.ExplosionSourceType.TNT); // here ain't any wrong!
+                this.world.createExplosion(this, this.getX(), this.getY(), this.getZ(), (float)this.explosionRadius * f, World.ExplosionSourceType.TNT); // here ain't any wrong!
             }
             this.discard();
+
             Collection<StatusEffectInstance> collection = this.getStatusEffects();
             if (!collection.isEmpty()) {
                 AreaEffectCloudEntity areaEffectCloudEntity = new AreaEffectCloudEntity(this.world, this.getX(), this.getY(), this.getZ());

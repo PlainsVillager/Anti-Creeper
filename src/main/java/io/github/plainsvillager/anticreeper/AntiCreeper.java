@@ -1,14 +1,9 @@
 package io.github.plainsvillager.anticreeper;
 
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleFactory;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleRegistry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.util.Identifier;
 import net.minecraft.world.GameRules;
-import net.minecraft.world.World;
 
 public class AntiCreeper implements ModInitializer {
 
@@ -20,6 +15,5 @@ public class AntiCreeper implements ModInitializer {
 
     @Override
     public void onInitialize() {
-
     }
 }

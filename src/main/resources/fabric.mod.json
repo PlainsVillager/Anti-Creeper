@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
   "id": "anticreeper",
-  "version": "1.5-beta.1",
-  "name": "AntiCreeper",
-  "description": "A mod that not allows creeper's explosion to break the block !",
+  "version": "1.5-beta.2",
+  "name": "§3§lAntiCreeper",
+  "description": "A mod that not allows creeper's explosion to break the block ! \n §kSubcribe to me §r",
   "authors": [
-    "PlainsVillager"
+    "§2P§3l§4a§5i§6n§7s§bVillager"
   ],
   "contact": {
-    "homepage": "https://plainsvillager.github.io/mods/AntiCreeper",
+    "homepage": "https://modrinth.com/mod/anti-creeper",
     "sources": "https://github.com/PlainsVillager/Anti-Creeper",
     "issues": "https://github.com/PlainsVillager/Anti-Creeper/issues"
   },
