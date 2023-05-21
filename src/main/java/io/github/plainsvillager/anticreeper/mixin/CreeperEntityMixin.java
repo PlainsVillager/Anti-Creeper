@@ -48,6 +48,7 @@ public abstract class CreeperEntityMixin extends LivingEntity {
             }
             this.discard();
 
+            // spawn effect cloud
             Collection<StatusEffectInstance> collection = this.getStatusEffects();
             if (!collection.isEmpty()) {
                 AreaEffectCloudEntity areaEffectCloudEntity = new AreaEffectCloudEntity(this.world, this.getX(), this.getY(), this.getZ());
