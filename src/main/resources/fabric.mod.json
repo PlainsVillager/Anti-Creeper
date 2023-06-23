@@ -1,0 +1,35 @@
+{
+	"schemaVersion": 1,
+	"id": "anticreeper",
+	"version": "2.0",
+	"name": "§3§lAntiCreeper",
+	"description": "A mod that not allows creeper's explosion to break the block ! \n §kSubcribe to me §r",
+	"authors": [
+		"§2P§3l§4a§5i§6n§7s§bVillager"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/mod/anti-creeper",
+		"sources": "https://github.com/PlainsVillager/Anti-Creeper",
+		"issues": "https://github.com/PlainsVillager/Anti-Creeper/issues"
+	  },
+	"license": "GPL-3.0",
+	"icon": "assets/anticreeper/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"io.github.plainsvillager.anti_creeper.AntiCreeper"
+		]
+	},
+	"mixins": [
+		"anticreeper.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.14.21",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
